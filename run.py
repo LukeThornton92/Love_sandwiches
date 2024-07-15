@@ -21,7 +21,9 @@ def get_sales_data():
     print("Example: 10,20,30,40,50,60")
 
     data_str = input("Enter your data here:")
-    print(f"The data provided is {data_str}")
+    
+    sales_data = data_str.split(",")
+    print sales_data
 
 get_sales_data()
 
