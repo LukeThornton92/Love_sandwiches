@@ -118,6 +118,22 @@ def calculate_stock_data(data):
 
     return new_stock_data
 
+def get_stock_values(data):
+  """
+  Print out the calculated stock numbers for each sandwich type.
+  """
+  headings = SHEET.worksheet('stock').row_values(1)
+  print(headings)
+
+  print("Make the following numbers of sandwiches for next market:\n")
+
+  new_data = {}
+  for heading, v in zip(headings, data):
+    new_data[heading] = v
+    print(f"{heading}: {v}")
+
+  return new_data
+    
 
 def main():
     """
@@ -134,4 +150,8 @@ def main():
 
 
 print("Welcome to Love Sandwiches Data Automation")
-main()
+#stock_data = main()
+
+#stock_values = get_stock_values(stock_data)
+#print(stock_values)
+pprint(get_stock_values(1))
